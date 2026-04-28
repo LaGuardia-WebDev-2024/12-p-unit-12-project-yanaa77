@@ -30,7 +30,7 @@ Select ONE Additional Feature to Add
         <select id="movie-answer">
           <option value="movie1">movie 1</option>
           <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
+          <option value="movie3">Chernobyl:Zone of Exclusion (2014–2017)</option>
           <option value="movie4">movie 4</option>
         </select>
       </label>
@@ -43,12 +43,12 @@ Select ONE Additional Feature to Add
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
+        📖 What is my favorite animal?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">butterfly</option>
+          <option value="book2">owl</option>
+          <option value="book3">turtle</option>
+          <option value="book4">dog</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
@@ -66,7 +66,7 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
+        if (answer === "movie3") {
           $("#movie-text").text("YESSSS!");
         } 
         else {
@@ -81,7 +81,7 @@ Select ONE Additional Feature to Add
         var $answer = $("#book-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
+        if (answer === "book2") {
           $("#book-text").text("YESSSS!");
         } 
         else {
