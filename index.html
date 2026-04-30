@@ -38,6 +38,7 @@ Select ONE Additional Feature to Add
     </form>
     <div id="movie-result">
       <p id="movie-text"></p>
+      <img id="movie-image" src="chernobyl/cGM5mvXOzwGdOr7uPJ1NNedapYE.webp" style="display:none; width:250px;" />
     </div>
     <hr />
     <!-- Book Question -->
@@ -46,7 +47,7 @@ Select ONE Additional Feature to Add
         📖 What is my favorite animal?
         <select id="book-answer">
           <option value="book1">butterfly</option>
-          <option value="book2">owl</option>
+          <option value="book2">owl</option> 
           <option value="book3">turtle</option>
           <option value="book4">dog</option>
         </select>
@@ -68,6 +69,7 @@ Select ONE Additional Feature to Add
 
         if (answer === "movie3") {
           $("#movie-text").text("YESSSS!");
+          $("#movie-image").fadeIn();  
         } 
         else {
           $("#movie-text").text("Try Again!");
