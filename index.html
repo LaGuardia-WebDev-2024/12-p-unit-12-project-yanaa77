@@ -21,12 +21,12 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>Quiz</h1>
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
-        🎥 What is my favorite movie?
+        🎥 What are my favorite tv series?
         <select id="movie-answer">
           <option value="movie1">movie 1</option>
           <option value="movie2">movie 2</option>
@@ -38,24 +38,45 @@ Select ONE Additional Feature to Add
     </form>
     <div id="movie-result">
       <p id="movie-text"></p>
-      <img id="movie-image" src="chernobyl/cGM5mvXOzwGdOr7uPJ1NNedapYE.webp" style="display:none; width:250px;" />
+
+      <img id="movie1-image" 
+      class="movie-image" 
+      src="alaska/61jozxQ31xS._AC_SX679_.jpg" 
+      style="display:none; width:250px;" /> 
+
+      <img id="movie2-image" 
+      class="movie-image" 
+      src="chernobyl/baby/Baby_Season_2_Poster.webp" 
+      style="display:none; width:260px;" />
+
+      <img id="movie3-image" 
+      class="movie-image" 
+       src="chernobyl/cGM5mvXOzwGdOr7uPJ1NNedapYE.webp" 
+       style="display:none; width:250px;" /> 
+
+
+<img id="movie4-image" 
+      class="movie-image" 
+       src="wayne/ryTyaGp0xNQfXvw0uV795kes0Ea.webp" 
+       style="display:none; width:250px;" /> 
+
     </div>
     <hr />
     <!-- Book Question -->
-    <form id="book-form">
+    <form id="season-form">
       <label>
-        📖 What is my favorite animal?
-        <select id="book-answer">
-          <option value="book1">butterfly</option>
-          <option value="book2">owl</option> 
-          <option value="book3">turtle</option>
-          <option value="book4">dog</option>
+        ❤︎ Which season is my favorite?
+        <select id="season-answer">
+          <option value="season1">season 1</option>
+          <option value="season2">season 2</option> 
+          <option value="season3">season 3</option>
+          <option value="season4">season 4</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
     </form>
-    <div id="book-result">
-      <p id="book-text"></p>
+    <div id="season-result">
+      <p id="season-text"></p>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
@@ -67,9 +88,24 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "movie3") {
-          $("#movie-text").text("YESSSS!");
-          $("#movie-image").fadeIn();  
+        $(".movie-image").hide();
+if (answer === "movie1") {
+        $("#movie-text").text("No, but I love it!");
+        $("#movie1-image").fadeIn(); // Show Alaska image
+
+} else if (answer === "movie2") {
+  $("#movie-text").text("Close, but not my favorite!");
+  $("#movie2-image").fadeIn();
+
+
+        } else if (answer === "movie3") {
+        $("#movie-text").text("YESSSS! My favorite!");
+        $("#movie3-image").fadeIn(); // Show Chernobyl image 
+
+        } else if (answer === "movie4") {
+  $("#movie-text").text("Not my favorite, but it’s still good!");
+  $("#movie4-image").fadeIn();
+ 
         } 
         else {
           $("#movie-text").text("Try Again!");
@@ -77,17 +113,17 @@ Select ONE Additional Feature to Add
       });
 
       //=======================Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
+      $("#season-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#book-answer");
+        var $answer = $("#season-answer");
         var answer = $answer.val();
 
-        if (answer === "book2") {
-          $("#book-text").text("YESSSS!");
+        if (answer === "season2") {
+          $("#season-text").text("YESSSS!");
         } 
         else {
-          $("#book-text").text("Try Again!");
+          $("#season-text").text("Try Again!");
         }
       });
       
@@ -95,4 +131,4 @@ Select ONE Additional Feature to Add
   </body>
 
   <!--- Taken From Khan Academy HTML/JS: Making webpages interactive with jQuery-->
-</html>
+</html> 
