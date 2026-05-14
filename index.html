@@ -9,7 +9,7 @@ Select ONE Additional Feature to Add
 [ no ] Feature 1 - Google Font
 [ no ] Feature 2 - Chain jQuery Methods
 [ no ] Feature 3 - .mouseover() & .mouseOut() Methods
-[ no ] Feature 4 - :hover Feature 
+[ yes ] Feature 4 - :hover Feature 
 [ no ] Feature 5 - Add an Additional Interactive Drop-down
 -->
 
@@ -77,6 +77,28 @@ Select ONE Additional Feature to Add
     </form>
     <div id="season-result">
       <p id="season-text"></p>
+
+<img id="season1-image"
+  class="season-image"
+  src="1/908087.jpg"
+  style="display:none; width:500px;" />
+
+  <img id="season2-image"
+  class="season-image"
+  src="chernobyl/baby/805407.jpg"
+  style="display:none; width:500px;" />
+
+  <img id="season3-image"
+  class="season-image"
+  src="chernobyl/baby/3/8.jpg"
+  style="display:none; width:500px;" />
+
+  <img id="season4-image"
+  class="season-image"
+  src="no/44518dac71850c103a2d1f6b3e92db68.jpg"
+  style="display:none; width:400px;" />
+
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
@@ -91,20 +113,42 @@ Select ONE Additional Feature to Add
         $(".movie-image").hide();
 if (answer === "movie1") {
         $("#movie-text").text("No, but I love it!");
-        $("#movie1-image").fadeIn(); // Show Alaska image
+            $("#movie1-image")
+      .css("width", "250px")
+      .fadeIn()
+      .animate({
+        width: "320px"
+      }, 500);
+
 
 } else if (answer === "movie2") {
   $("#movie-text").text("Close, but not my favorite!");
-  $("#movie2-image").fadeIn();
+  $("#movie2-image")
+.css("width", "250px")
+.fadeIn()
+.animate({
+  width: "350px"
+}, 500);
 
 
         } else if (answer === "movie3") {
         $("#movie-text").text("YESSSS! My favorite!");
-        $("#movie3-image").fadeIn(); // Show Chernobyl image 
+$("#movie3-image")
+.css("width", "250px")
+.fadeIn()
+.animate({
+  width: "320px"
+}, 500);
 
         } else if (answer === "movie4") {
   $("#movie-text").text("Not my favorite, but it’s still good!");
-  $("#movie4-image").fadeIn();
+      $("#movie4-image")
+      .css("width", "250px")
+      .fadeIn()
+      .animate({
+        width: "320px"
+      }, 500);
+
  
         } 
         else {
@@ -119,11 +163,28 @@ if (answer === "movie1") {
         var $answer = $("#season-answer");
         var answer = $answer.val();
 
-        if (answer === "season2") {
-          $("#season-text").text("YESSSS!");
-        } 
-        else {
-          $("#season-text").text("Try Again!");
+        $(".season-image").hide();
+
+
+        if (answer === "season1") {
+    $("#season-text").text("Close!");
+    $("#season1-image").fadeIn();
+
+  } else if (answer === "season2") {
+    $("#season-text").text("YESSSS!");
+    $("#season2-image").fadeIn();
+
+  } else if (answer === "season3") {
+    $("#season-text").text("Not my favorite!");
+    $("#season3-image").fadeIn();
+
+  } else if (answer === "season4") {
+    $("#season-text").text("There is no season 4!");
+    $("#season4-image").fadeIn();
+
+  } else {
+    $("#season-text").text("Try Again!");
+
         }
       });
       
